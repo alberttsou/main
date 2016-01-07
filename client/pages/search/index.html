@@ -1,38 +1,82 @@
-!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html ng-app='emuSearch'>
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type="text/javascript" src="../../app.js"></script>
+
     <meta charset="utf-8" />
     <title>emuSearch</title>
-    <!-- <link rel="stylesheet" type="text/css" href="styles/style.css" /> -->
   </head>
   <body>
     <h1>emuSearch</h1>
-
-    <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
-    <!-- <div ng-view></div> -->
-
     <form name="filterform" ng-controller="filterController" ng-submit="submit()">
+      <h4>Submit a Review</h4>
 
-              <!--  Review Form -->
-              <h4>Submit a Review</h4>
-              <fieldset class="form-group">
-                <select ng-model="data.price" class="form-control" title="Stars">
-                  <option value="">Rate the Product</option>
-                </select>
-              </fieldset>
-              <fieldset class="form-group">
-                <textarea ng-model="data.distance" class="form-control" placeholder="Write a short review of the product..." title="Review"></textarea>
-              </fieldset>
-              <fieldset class="form-group">
-                <input ng-model="reviewCtrl.review.author" type="email" class="form-control" placeholder="jimmyDean@example.org" title="Email" />
-              </fieldset>
-              <fieldset class="form-group">
-                <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
-              </fieldset>
-        </form>
+      <fieldset class="form-group">
+        <textarea ng-model="data.price" class="form-control" placeholder="your price" title="Review"></textarea>
+      </fieldset>
+      <fieldset class="form-group">
+        <textarea ng-model="data.distance" class="form-control" placeholder="dat distance" title="Review"></textarea>
+      </fieldset>
+      <fieldset class="form-group">
+        <input type="submit" class="btn btn-primary pull-right" value="Submit data" />
+      </fieldset>
+    </form>
 
-    <script src="lib/angular/angular.js"></script>
-    <script src="lib/angular-route/angular-route.js"></script>
-    <script src="app/app.js"></script>
+
+
+          <ul>
+      <h4>Jobs</h4>
+      <li ng-repeat="job in jobz">
+        <blockquote>
+          <strong>{{job.name}} </strong>
+          {{job.description}}
+          {{job.price}}
+          {{job.location}}
+          <cite class="clearfix">—{{job.creator}}</cite>
+        </blockquote>
+      </li>
+    </ul>
   </body>
 </html>
+ -->
+ <!doctype html>
+<html ng-app="emuSearch">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+     <meta charset="utf-8" />
+    <title>emuSearch</title>
+  </head>
+  <body>
+    <h1>emuSearch</h1>
+    <form name="filterform" ng-controller="searchCtrl" ng-submit="submit()">
+      <h4>Submit a Review</h4>
+      {{poop}}
+      <fieldset class="form-group">
+        <textarea ng-model="data.price" class="form-control" placeholder="your price" title="Review"></textarea>
+      </fieldset>
+      <fieldset class="form-group">
+        <textarea ng-model="data.distance" class="form-control" placeholder="dat distance" title="Review"></textarea>
+      </fieldset>
+      <fieldset class="form-group">
+        <input type="submit" class="btn btn-primary pull-right" value="Submit data" />
+      </fieldset>
+    </form>
+
+
+
+          <ul>
+      <h4>Jobs</h4>
+      <li ng-repeat="job in jobz">
+        <blockquote>
+          <strong>{{job.name}} </strong>
+          {{job.description}}
+          {{job.price}}
+          {{job.location}}
+          <cite class="clearfix">—{{job.creator}}</cite>
+        </blockquote>
+      </li>
+    </ul>
+  </body>
+</html>
+ -->
