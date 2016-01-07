@@ -15,7 +15,7 @@ CREATE TABLE Jobs (
   name varchar(200) NOT NULL,
   description varchar(200)  NOT NULL,
   price DECIMAL(10, 2) NOT NULL,
-  latitude DECIMAL(8,6),
+  latitude DECIMAL(8,6), -- convert to [,] tuple when return as location
   longitude DECIMAL(9,6),
   PRIMARY KEY (ID)
 );
