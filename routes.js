@@ -2,7 +2,7 @@
   "GET /users/:id": {
     "desc": "returns one user represented by their id",
     "response" : "200 application/json",
-    "data": [{}, {}, {}]
+    "data": {}
   },
   "POST /users": {
     "desc": "creates and returns a new user",
@@ -10,8 +10,8 @@
     "data": {}
   },
 
-  "GET /jobs": {
-    "desc": "returns all jobs",
+  "GET /jobs/": {
+    "desc": "returns all jobs", // specify dist, money, etc with req.query.money 
     "response" : "200 application/json",
     "data": [{}, {}, {}]
   },
