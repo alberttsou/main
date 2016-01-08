@@ -45,7 +45,7 @@ describe('[JOBS]', function(){
       expect(resp.body[0].price).to.be.below(200);
       // distance calculation expect(resp.body[0].latitude ... ).to.be.below(5);
       done();
-    })
+    });
   });
 
   it('should get jobs filterered by set params', function(done){
@@ -59,6 +59,6 @@ describe('[JOBS]', function(){
       expect(resp.body.price).to.be.an('number');
       expect(resp.body.id).to.be.an('number');
       done();
-    })
-  })
+    });
+  });
 })
