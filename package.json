@@ -8,6 +8,9 @@
     "Albert Tsou",
     "Dmitriy Korenblyum"
   ],
+  "scripts": {
+    "test": "mocha server/spec.js"
+  },
   // "scripts": {
   //   "test": "gulp karma",
   //   //"start": "gulp",
