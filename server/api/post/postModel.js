@@ -17,9 +17,18 @@ var PostSchema = new Schema({
     type: Number
   },
 
-  author: {type: Schema.Types.ObjectId, ref: 'user'},
+  author: {
+    type: String
+  },
 
-  categories: [{type: Schema.Types.ObjectId, ref: 'category'}]
+  category: {
+    type: String
+  }
+
+  // readd when functionality is added back in
+  // author: {type: Schema.Types.ObjectId, ref: 'user'},
+
+  // categories: [{type: Schema.Types.ObjectId, ref: 'category'}]
 },
 {
   timestamps: { createdAt: 'created_at' }

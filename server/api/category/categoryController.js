@@ -7,6 +7,7 @@ exports.params = function(req, res, next, id) {
       if (!category) {
         next(new Error('No category with that id'));
       } else {
+        // add the found category to the request body 
         req.category = category;
         next();
       }
@@ -42,7 +43,7 @@ exports.put = function(req, res, next) {
     } else {
       res.json(saved);
     }
-  })
+  });
 };
 
 exports.post = function(req, res, next) {
