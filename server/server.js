@@ -1,17 +1,16 @@
 var express = require('express');
-var mongoose = require('mongoose');
-
 var app = express();
+var api = require('./api/api');
+var config = require('./config/config');
+// db.url is different depending on NODE_ENV
+require('mongoose').connect(config.db.url);
 
-// connect to mongo database named "emu"
-mongoose.connect('mongodb://localhost/emu');
+// setup the app middlware
+require('./middleware/appMiddlware')(app);
 
-// configure our server with all the middleware and routing
-require('./config/middleware.js')(app, express);
-require('./config/routes.js')(app, express);
+// setup the api
+app.use('/api/', api);
+// set up global error handling
 
-// start listening to requests on port 8000
-app.listen(8000);
-
-// export our app for testing and flexibility, required by index.js
+// export the app for testing
 module.exports = app;
