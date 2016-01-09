@@ -8,7 +8,7 @@ require('mongoose').connect(config.db.url);
 // setup the app middlware
 require('./middleware/appMiddlware')(app);
 
-// setup the api
+// setup the api, including all routes
 app.use('/api/', api);
 // set up global error handling
 
