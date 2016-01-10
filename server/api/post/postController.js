@@ -39,7 +39,11 @@ exports.put = function(req, res, next) {
 
   var update = req.body;
 
-  _.merge(post, update);
+  _.merge(post, update, function(a,b){
+    if(_.isArray(a)) {
+      return a.concat(b);
+    }
+  });
 
   post.save(function(err, saved) {
     if (err) {

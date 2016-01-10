@@ -1,0 +1,27 @@
+<form>
+	<input type="text" ng-model = "data.salary">
+<br>
+	<select ng-model='data.categories'>
+		<option value="Emu Sort">Emu Sort</option>
+		<option value="Emu Hash">Emu Hash</option>
+		<option value="Emu Bucket">Emu Bucket</option>
+	</select>
+<br>
+	<button type ='submit' ng-click = 'processFilter()'>Filter Results</button>
+<br>
+	<pre>{{ data | json }}</pre>
+</form>
+	<pre>{{ bids | json }}</pre>
+<div ng-repeat = "job in jobs">
+	<ul>
+		<li>
+			{{job.title}}
+			{{job.text}}
+			{{job.salary}}
+
+			<br>
+			<input type = "text" ng-model ="bids[job._id]">
+			<button type ="submit" ng-click="makeBid(job._id)">Make Bid ({{job._bids.length}})</button>
+		</li>
+	</ul>
+</div>
