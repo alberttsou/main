@@ -17,18 +17,28 @@ var PostSchema = new Schema({
     type: Number
   },
 
-  author: {
-    type: String
+  bids : {
+    type: [{
+      price : {
+        type: String
+      },
+      description: {
+        type : String
+      }
+    }]
   },
+  // author: {
+  //   type: String
+  // },
 
-  category: {
-    type: String
-  }
+  // category: {
+  //   type: String
+  // }
 
   // readd when functionality is added back in
-  // author: {type: Schema.Types.ObjectId, ref: 'user'},
+  author: {type: Schema.Types.ObjectId, ref: 'user'},
 
-  // categories: [{type: Schema.Types.ObjectId, ref: 'category'}]
+  categories: [{type: Schema.Types.ObjectId, ref: 'category'}]
 },
 {
   timestamps: { createdAt: 'created_at' }
