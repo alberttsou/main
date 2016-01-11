@@ -85,7 +85,7 @@
   },
 
   "PUT /api/posts/:id": {
-    "desc": "changes a post, specified by its id, and returns the changed post",
+    "desc": "changes a post, specified by its id, and returns the changed post. If the post is changed to chose: True, then update all the bids on the post to reflect which bid was chosen",
     "response" : "200 application/json",
     "data": {}
   },
