@@ -1,34 +1,46 @@
-var db = [
-	{
-		id:1,
-		title: "Promotion Name",
-		text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-		salary: 50,
-		author:"Dima",
-		bids:[]		
-	},
-	{
-		id:2,
-		title: "Promotion Name",
-		text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-		salary: 50,
-		author:"Dima",
-		bids:[]		
-	},	
-	{
-		id:3,
-		title: "Promotion Name",
-		text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-		salary: 50,
-		author:"Dima",
-		bids:[]		
-	}
-]
+// var db = [
+// 	{
+// 		title: "My job title",
+// 		salary: 90,
+// 		bids : [
+// 			{
+// 				status: false,
+// 				bidId: 1
+// 			}
+// 		]
+// 	},
+// 	{
+// 		title: "My job title",
+// 		salary: 90,
+// 		bids : [
+// 			{
+// 				status: false,
+// 				bidId: 1
+// 			}
+// 		]
+// 	},
+// 	{
+// 		title: "My job title",
+// 		salary: 90,
+// 		bids : [
+// 			{
+// 				status: false,
+// 				bidId: 1
+// 			}
+// 		]
+// 	}
+// 	];
 app.controller('searchCtrl', function($scope, $http){
 
-	$scope.data = {}
-	$scope.jobs = {};
+	$scope.data = {salary:0}
+	$scope.jobs;
 	$scope.bids = {};
+
+	$scope.greaterThan = function(prop, val){
+    	return function(item){
+    	return item[prop] > val;
+    	}
+    };	
 
 	$scope.makeBid = function(id){
 		// var bid = [];
@@ -59,4 +71,6 @@ app.controller('searchCtrl', function($scope, $http){
 				console.log(":(")
 			});
 	};
+
+
 })

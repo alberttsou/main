@@ -1,18 +1,19 @@
 <form>
-	<input type="text" ng-model = "data.salary">
-<br>
+	<input type="number" ng-model = "data.salary">
+<!-- <br>
 	<select ng-model='data.categories'>
 		<option value="Emu Sort">Emu Sort</option>
 		<option value="Emu Hash">Emu Hash</option>
 		<option value="Emu Bucket">Emu Bucket</option>
-	</select>
+	</select> -->
 <br>
 	<button type ='submit' ng-click = 'processFilter()'>Filter Results</button>
 <br>
 	<pre>{{ data | json }}</pre>
 </form>
 	<pre>{{ bids | json }}</pre>
-<div ng-repeat = "job in jobs">
+<div ng-repeat="job in jobs | filter: greaterThan('salary', data.salary)">	
+<!-- <div ng-repeat = "job in jobs"> -->
 	<ul>
 		<li>
 			{{job.title}}
