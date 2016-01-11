@@ -1,8 +1,27 @@
-<div>
-<h1>My Bids</h1>
-	<ul>
-	</ul>
-<h1>My Jobs</h1>
-	<ul>
-	</ul>
+<div ng-init = "getUserBids(); getUserJobs()">
+	<h1>My Bids</h1>
+		<div ng-repeat = "bid in bids">
+			<ul>
+				<li>
+				<!-- {{bid.job}} will need to redesign schema  -->
+				{{bid.price}}
+				{{bid.status}}
+				</li>
+			</ul>
+		</div>
+	<h1>My Jobs</h1>
+		<div ng-repeat = "job in jobs">
+			<ul>
+				<li>
+					{{job.title}}
+					{{job.price}}
+					<div ng-repeat = "bid in job.bids">
+						<!-- {{bid.user}} will need to redesign schema -->
+							{{bid.price}}
+						<br>
+							<button type ="submit" ng-click="selectBid(bid.id)">Select</button>
+					</div>
+				</li>
+			</ul>
+		</div>
 </div>
