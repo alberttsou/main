@@ -1,5 +1,5 @@
 
-app.controller('dashboardCtrl', function($scope, $http){
+app.controller('dashboardCtrl', function($scope, $http, $rootScope){
 	$scope.message = "Welcome to the Dashboard";
 	$scope.bids;
 	$scope.jobs = [
@@ -35,7 +35,7 @@ app.controller('dashboardCtrl', function($scope, $http){
 	}
 	];
 	// var userId = window.localStorage.user.id;
-	$scope.userId;//fake user
+	$scope.userId = $rootScope.userId;//fake user
 
 	$scope.getUserBids = function () {
 		

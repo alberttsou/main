@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html ng-app = 'emuAttack'>
 <head>
-	
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<title>Welcome To Emu</title>
+
+    <!-- CSS-->
+    <link href="lib/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/myStyle.css" rel="stylesheet">
+
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.js"></script>
 	<script type="text/javascript" src ="Controllers/app.js"></script>
@@ -12,13 +20,30 @@
 	<script type="text/javascript" src ="Controllers/search.js"></script>
 </head>
 <body>
-		<a href = '#/'> login<a>
-		<a href = '#post/'> post<a>
-		<a href = '#search/'> search<a>
-		<a href = '#dashboard/'> dashboard<a>
 
-	<div ng-view>
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#search/">Adamant Emu</a>
+	    </div>
+	    <ul class="nav navbar-nav">
+	      <li><a href="#/">Login</a></li>
+	      <li><a href="#post/">Post a Job</a></li>
+	      <li><a href="#search/">Search All Jobs</a></li>
+	      <li><a href="#dashboard/">My Dashboard</a></li>
+	    </ul>
+	  </div>
+	</nav>
+	<div class = "container">
+	<div class = "col-lg-3"></div>
+	
+		<div ng-view class = "col-lg-6">
 <!-- ====================================DYNAMIC CONTENT================================================ -->
+		</div>
+	<div class = "col-lg-3"></div>
 	</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="lib/bootstrap.min.js"></script>	
 </body>
 </html>
