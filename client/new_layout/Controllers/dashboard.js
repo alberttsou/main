@@ -10,6 +10,10 @@ app.controller('dashboardCtrl', function($scope, $http, $rootScope){
 			{
 				status: false,
 				bidId: 1
+			},
+			{
+				status: false,
+				bidId: 1
 			}
 		]
 	},

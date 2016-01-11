@@ -1,7 +1,9 @@
 <h5>Filter by price<h5>
 <form>
 <div>
-	<input type="number" ng-model = "data.salary">
+	<div class = "form-group">
+		<input type="number" class = "form-control" ng-model = "data.salary">
+	</div>
 <!-- <br>
 	<select ng-model='data.categories'>
 		<option value="Emu Sort">Emu Sort</option>
@@ -9,12 +11,14 @@
 		<option value="Emu Bucket">Emu Bucket</option>
 	</select> -->
 	<button class = "btn btn-primary" type ='submit' ng-click = 'processFilter()'>Filter</button>
-
 </form>
+
+<h2 class = "topMargin">Search Posted Jobs</h2>
+
 
 <div ng-repeat="job in jobs | filter: greaterThan('salary', data.salary)">	
 <!-- <div ng-repeat = "job in jobs"> -->
-	<ul>
+	<!-- <ul>
 		<li>
 			{{job.title}}
 			{{job.text}}
@@ -24,5 +28,20 @@
 			<input type = "text" ng-model ="bids[job._id]">
 			<button type ="submit" ng-click="makeBid(job._id)">Make Bid ({{job._bids.length}})</button>
 		</li>
-	</ul>
+	</ul> -->
+	<div class = "row">
+	<div class="col-sm-4"></div>
+	</div>
+	<div class="panel panel-default">
+	  <div class="panel-heading">{{job.title}} - Price: {{job.salary}}</div>
+	  <div class="panel-body">{{job.text}}</div>
+	</div>
+
+	<div class = "well"><h4 class = "topMargin">Make a bid for: {{job.title}}</h4>
+		<div class = "form-group">
+			<input type = "number" class = "form-control" ng-model ="bids[job._id]">
+		</div>
+			<button class="btn btn-primary" type ="submit" ng-click="makeBid(job._id)">Bid</button>		
+	</div>
 </div>
+
