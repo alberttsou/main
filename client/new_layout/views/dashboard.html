@@ -1,4 +1,4 @@
-<div ng-init = "getUserBids(); getUserJobs()">
+<div ng-init = "getUserJobs()">
 <h1>My Jobs</h1>
 	<div ng-repeat = "job in jobs">
 		<div class = "well"><h4 class = "topMargin">All bids for: {{job.title}}</h4>
@@ -7,7 +7,7 @@
 					{{bid.price}}
 					{{bid.description}}
 					<br>
-					<button class = "btn btn-primary" type ="submit" ng-click="selectBid(bid.id)">Select Bid</button>
+					<button class = "btn btn-primary" type ="submit" ng-click="selectBid(job._id, bid._id)">Select Bid</button>
 			</div>	
 		</div>
 	</div>

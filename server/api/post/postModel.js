@@ -17,6 +17,11 @@ var PostSchema = new Schema({
     type: Number
   },
 
+  chose: {
+    type: Boolean,
+    default: false
+  },
+
   // bids : {
   //   type: [{
   //     price : {
@@ -38,7 +43,6 @@ var PostSchema = new Schema({
   //   type: String
   // }
 
-  // readd when functionality is added back in
   author: {type: Schema.Types.ObjectId, ref: 'user'},
 
   categories: [{type: Schema.Types.ObjectId, ref: 'category'}],
