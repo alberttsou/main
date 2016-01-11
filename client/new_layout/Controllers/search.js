@@ -30,7 +30,7 @@
 // 		]
 // 	}
 // 	];
-app.controller('searchCtrl', function($scope, $http){
+app.controller('searchCtrl', function($scope, $http, $rootScope){
 
 	$scope.data = {salary:0}
 	$scope.jobs;
@@ -46,7 +46,9 @@ app.controller('searchCtrl', function($scope, $http){
 		// var bid = [];
 		var newBid = {bids: {
 			price : $scope.bids[id],
-			desc : ""
+			desc : "",
+			user: $rootScope.userId
+
 		}}
 		console.log('new bid', newBid)
 

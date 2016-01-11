@@ -1,15 +1,15 @@
-<form>
+<!-- <form>
 	Salary:<br>
 	<input type="pass" ng-model = "data.salary">
 <br>
 	Job name:<br>
 	<input type="text" ng-model = "data.title">
-<!-- <br>
+<br>
 	<select ng-model='data.categories'>
 		<option value="Emu Sort">Emu Sort</option>
 		<option value="Emu Hash">Emu Hash</option>
 		<option value="Emu Bucket">Emu Bucket</option>
-	</select> -->
+	</select>
 <br>
 	Job Description<br>
 	<textarea rows="4" cols="50" ng-model = "data.text">
@@ -18,4 +18,24 @@
 	<button ng-click = "proccesSubmit()" type ='submit'>Post Job</button>
 <br>
 	<pre>{{ data | json }}</pre>
-</form>
+</form> -->
+<h1>Create a new job post.<h1>
+<h3>What kind of a job do you want done?</h3>
+<form>
+    <div class="form-group">
+      <p>What is your Job's Name?</p>
+      <input type="text" class="form-control" ng-model = "data.title">
+    </div>
+    <div class="form-group">
+      <p>Short description of your job:</p>
+      <textarea class="form-control" rows="5" id="comment" ng-model = "data.text"></textarea>
+    </div>
+    <div class="form-group">
+      <p>How much are you willing to pay?</p>
+	      <div> 
+	      	 <input type="number" class="form-control" ng-model = "data.salary">
+	      </div>
+    </div>
+    <button class="btn btn-primary" type = "submit" ng-click = "proccesSubmit()">Post Job</button>
+  </form>
+
